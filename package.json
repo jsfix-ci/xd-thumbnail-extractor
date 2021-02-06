@@ -1,6 +1,6 @@
 {
   "name": "@spectrum/xd-thumbnail",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extract thumbnail from Adobe XD file",
   "main": "index.js",
   "repository": "https://git.corp.adobe.com/spectrum/xd-thumbnail",

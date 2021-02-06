@@ -28,6 +28,12 @@ test('Extract thumbnail to a different folder with default name', async t => {
   t.true(fs.existsSync(`./test/fixtures/target/${baseName}.png`));
 });
 
+test('Support XD file without extension name', async t => {
+  const baseName = 'Cards-v1.0.0';
+  await thumbnailExtractor.extractThumbnail({ file: `./test/fixtures/${baseName}` });
+  t.true(fs.existsSync(`./test/fixtures/${baseName}.png`));
+});
+
 test.after.always(t => {
   fs.readdirSync('./test/fixtures')
     .filter(f => /[.]png$/.test(f))
