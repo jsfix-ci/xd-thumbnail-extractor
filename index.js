@@ -3,7 +3,7 @@ const StreamZip = require('node-stream-zip');
 const path = require('path');
 const DEFAULT_XD_THUMBNAIL_NAME = 'thumbnail.png';
 
-exports.extractThumbnail = async ({ file, filename, filepath }) => {
+exports.extractThumbnail = async (file, { filename, filepath } = {}) => {
   if (!file) {
     console.error('Missing target XD file');
     return;

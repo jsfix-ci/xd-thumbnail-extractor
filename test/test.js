@@ -1,36 +1,36 @@
 const test = require('ava');
 const fs = require('fs');
-const thumbnailExtractor = require('..');
+const { extractThumbnail } = require('..');
 
 fs.mkdirSync('./test/fixtures/target');
 
 test('Default thumbnail file name should be the same as the basename of XD file', async t => {
   const baseName = 'Cards-v1.0.0';
-  await thumbnailExtractor.extractThumbnail({ file: `./test/fixtures/${baseName}.xd` });
+  await extractThumbnail(`./test/fixtures/${baseName}.xd`);
   t.true(fs.existsSync(`./test/fixtures/${baseName}.png`));
 });
 
 test('Customized thumbnail filename', async t => {
   const baseName = 'Spectrum_Demo_2021-01-26-Hello_BackstopJS';
-  await thumbnailExtractor.extractThumbnail({ file: `./test/fixtures/${baseName}.xd`, filename: 'test.png' });
+  await extractThumbnail(`./test/fixtures/${baseName}.xd`, { filename: 'test.png' });
   t.true(fs.existsSync(`./test/fixtures/test.png`));
 });
 
 test('Customized thumbnail filename with none default output path', async t => {
   const baseName = 'Cards-v1.0.0';
-  await thumbnailExtractor.extractThumbnail({ file: `./test/fixtures/${baseName}.xd`, filename: 'test.png', filepath: './test/fixtures/target' });
+  await extractThumbnail(`./test/fixtures/${baseName}.xd`, { filename: 'test.png', filepath: './test/fixtures/target' });
   t.true(fs.existsSync(`./test/fixtures/test.png`));
 });
 
 test('Extract thumbnail to a different folder with default name', async t => {
   const baseName = 'Spectrum_Demo_2021-01-26-Hello_BackstopJS';
-  await thumbnailExtractor.extractThumbnail({ file: `./test/fixtures/${baseName}.xd`, filepath: './test/fixtures/target' });
+  await extractThumbnail(`./test/fixtures/${baseName}.xd`, { filepath: './test/fixtures/target' });
   t.true(fs.existsSync(`./test/fixtures/target/${baseName}.png`));
 });
 
 test('Support XD file without extension name', async t => {
   const baseName = 'Cards-v1.0.0';
-  await thumbnailExtractor.extractThumbnail({ file: `./test/fixtures/${baseName}` });
+  await extractThumbnail(`./test/fixtures/${baseName}`);
   t.true(fs.existsSync(`./test/fixtures/${baseName}.png`));
 });
 

@@ -1,5 +1,5 @@
 {
-  "name": "@spectrum/xd-thumbnail",
+  "name": "@spectrum/xd-thumbnail-extractor",
   "version": "0.0.2",
   "description": "Extract thumbnail from Adobe XD file",
   "main": "index.js",
