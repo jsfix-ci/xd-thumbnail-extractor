@@ -1,6 +1,7 @@
 const test = require('ava');
 const fs = require('fs');
-const { extractThumbnail } = require('..');
+const { async } = require('node-stream-zip');
+const { extractThumbnail, extractThumbnailToStream, extractThumbnailToBuffer } = require('..');
 
 fs.mkdirSync('./test/fixtures/target');
 
@@ -32,6 +33,16 @@ test('Support XD file without extension name', async t => {
   const baseName = 'Cards-v1.0.0';
   await extractThumbnail(`./test/fixtures/${baseName}`);
   t.true(fs.existsSync(`./test/fixtures/${baseName}.png`));
+});
+
+test('Extract from stream and write to another stream', async t => {
+  await extractThumbnailToStream(fs.createReadStream('./test/fixtures/Cards-v1.0.0.xd'), fs.createWriteStream('./test/fixtures/target/cards.png'));
+  t.true(fs.existsSync('./test/fixtures/target/cards.png'));
+});
+
+test('Extract to buffer', async t => {
+  const buf = await extractThumbnailToBuffer(fs.createReadStream('./test/fixtures/Spectrum_Demo_2021-01-26-Hello_BackstopJS.xd'));
+  t.true(buf.length > 0);
 });
 
 test.after.always(t => {

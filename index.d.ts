@@ -17,4 +17,9 @@ declare namespace XdThumbnailExtractor {
 }
 
 declare function extractThumbnail(file: string,
-  options?: XdThumbnailExtractor.Options): Promise<any>;
+  options?: XdThumbnailExtractor.Options): void;
+
+declare function extractThumbnailToStream(readableStream: NodeJS.ReadableStream,
+  writableStream: NodeJS.WritableStream): void;
+
+declare function extractThumbnailToBuffer(readableStream: NodeJS.ReadableStream): Promise<Buffer>;
