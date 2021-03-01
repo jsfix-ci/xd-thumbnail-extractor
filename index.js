@@ -28,6 +28,7 @@ exports.extractThumbnailToStream = async (readableStream, writableStream) => {
     console.error('Only accept NodeJS.WritableStream for the second argument');
     return;
   }
+
   return new Promise((resolve, reject) => {
     readableStream
       .pipe(unzipStream.Parse())

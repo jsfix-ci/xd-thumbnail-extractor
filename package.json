@@ -1,6 +1,6 @@
 {
-  "name": "@spectrum/xd-thumbnail-extractor",
-  "version": "0.0.4",
+  "name": "xd-thumbnail-extractor",
+  "version": "0.0.5",
   "description": "Extract thumbnail from Adobe XD file",
   "main": "index.js",
   "repository": "https://git.corp.adobe.com/spectrum/xd-thumbnail",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "is-stream": "^2.0.0",
-    "node-stream-zip": "^1.13.0",
+    "node-stream-zip": "^1.13.2",
     "stream-to-array": "^2.3.0",
     "unzip-stream": "^0.3.1"
   },
