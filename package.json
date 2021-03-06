@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "description": "Extract thumbnail from Adobe XD file",
   "main": "index.js",
+  "bin": "./bin/index.js",
   "repository": "https://github.com/jianliao/xd-thumbnail-extractor.git",
   "author": "jianliao",
   "license": "MIT",
@@ -10,8 +11,10 @@
     "test": "ava"
   },
   "dependencies": {
+    "commander": "^7.1.0",
     "is-stream": "^2.0.0",
     "node-stream-zip": "^1.13.2",
+    "ora": "^5.3.0",
     "stream-to-array": "^2.3.0",
     "unzip-stream": "^0.3.1"
   },
