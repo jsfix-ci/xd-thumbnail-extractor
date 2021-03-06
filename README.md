@@ -1,4 +1,5 @@
 # XD-Thumbnail
+<img width="30" alt="Logo" src="https://helpx.adobe.com/content/dam/help/mnemonics/xd_app_RGB_2017.svg"> 
 An utility package to extract thumbnail from Adobe XD file.
 
 ## Command line interface
