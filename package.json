@@ -1,9 +1,11 @@
 {
   "name": "xd-thumbnail-extractor",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Extract thumbnail from Adobe XD file",
   "main": "index.js",
-  "bin": "./bin/index.js",
+  "bin": {
+    "xd-thumbnail-extractor": "bin/index.js"
+  },
   "repository": "https://github.com/jianliao/xd-thumbnail-extractor.git",
   "author": "jianliao",
   "license": "MIT",
